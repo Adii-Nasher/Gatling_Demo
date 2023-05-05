@@ -8,7 +8,7 @@ import io.gatling.javaapi.http.HttpDsl.{http, status}
 
 object Request {
   var get_UserInfo: HttpRequestBuilder = http("Get userInfo")
-    .post(baseUrl + "/page=2")
+    .post(baseUrl + "/api/users")
     .body(RawFileBody("src/User.json")).asJson
     .header("content-type","application/json")
     .check(status is 200)
